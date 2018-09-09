@@ -8,6 +8,7 @@ public class BankAccount {
 		balance = 0;
 		interestRate = rate;
 		password = pass;
+		
 	}
 
 	public double getBalance(String p) {
