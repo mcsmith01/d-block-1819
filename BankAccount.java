@@ -18,4 +18,12 @@ public class BankAccount {
 		}
 	}
 
+	public double deposit(double amount) {
+		if (amount <= 0) {
+			return -1;
+		}
+		balance = balance + amount;
+		return balance;
+	}
+
 }
