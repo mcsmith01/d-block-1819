@@ -10,7 +10,7 @@ public class BankRunner {
 		System.out.println(ba.getBalance("password"));
 		ba.withdraw(20, "password");
 		System.out.println(ba.getBalance("password"));
-		System.out.println(ba.accrueInterst(2));
+		System.out.println(ba.accrueInterest(2));
 
 	}
 
