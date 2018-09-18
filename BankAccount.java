@@ -1,10 +1,12 @@
 public class BankAccount {
 
+	private int acctNumber;
 	private double balance;
 	private double interestRate;
 	private String password;
 
-	public BankAccount(double rate, String pass) {
+	public BankAccount(int n, double rate, String pass) {
+		acctNumber = n;
 		balance = 0;
 		interestRate = rate;
 		password = pass;
