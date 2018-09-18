@@ -21,5 +21,13 @@ public class Bank {
 		return num;
 	}
 
+	public double deposit(int num, double amount, String pass) {
+		BankAccount ba = accounts.get(num);
+		if (ba.deposit(amount) >= 0) {
+			vault += amount;
+		}
+		return ba.getBalance(pass);
+	}
+
 
 }
