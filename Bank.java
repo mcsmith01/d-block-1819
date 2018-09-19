@@ -16,7 +16,7 @@ public class Bank {
 
 	public int createAccount(String pass) {
 		int num = accounts.size();
-		BankAccount account = new BankAccount(num, loanRate - 0.02, pass);
+		BankAccount account = new BankAccount(num, loanRate - 0.02, pass, this);
 		accounts.add(account);
 		return num;
 	}
@@ -29,5 +29,15 @@ public class Bank {
 		return ba.getBalance(pass);
 	}
 
+	public boolean withdraw(int num, double amount, String pass) {
+		BankAccount ba = accounts.get(num);
+		if (vault >= amount && ba.withdraw(amount, pass) != -1) {
+			vault -= amount;
+			return true;
+		} else {
+			return false;
+		}
+
+	}
 
 }

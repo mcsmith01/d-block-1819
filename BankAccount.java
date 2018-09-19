@@ -4,12 +4,14 @@ public class BankAccount {
 	private double balance;
 	private double interestRate;
 	private String password;
+	private Bank bank;
 
-	public BankAccount(int n, double rate, String pass) {
+	public BankAccount(int n, double rate, String pass, Bank b) {
 		acctNumber = n;
 		balance = 0;
 		interestRate = rate;
 		password = pass;
+		bank = b;
 	}
 
 	public double getBalance(String p) {
@@ -44,6 +46,10 @@ public class BankAccount {
 		return balance;
 	}
 
+	public String toString() {
+		
 
+
+	}
 
 }
