@@ -3,11 +3,7 @@ import java.awt.Rectangle;
 public class Unit1 {
 
   public static void main(String[] args) {
-	  int x = 7;
-	  int y = 2;
-	  double z = (double) x / y * y;
-	  System.out.println(z);
-    // variables();
+    variables();
   }
 
   public static void variables() {
