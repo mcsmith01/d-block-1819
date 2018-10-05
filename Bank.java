@@ -37,7 +37,22 @@ public class Bank {
 		} else {
 			return false;
 		}
-
 	}
 
+	public double getBalance(int num, String pass) {
+		BankAccount ba = accounts.get(num);
+		return ba.getBalance(pass);
+	}
+	public String getName(){
+		return name;
+	}
+	public String acctInfo(int num, String pass){
+		BankAccount ba = accounts.get(num);
+		if (ba.checkPassword(pass)){
+			return ba.toString();
+		} else {
+			return "YOU SHALL NOT PASS!";
+		}
+
+	}
 }

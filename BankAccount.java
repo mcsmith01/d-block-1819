@@ -46,10 +46,16 @@ public class BankAccount {
 		return balance;
 	}
 
+	public boolean checkPassword(String guess) {
+		return guess.equals(password);
+	}
+
 	public String toString() {
-		
-
-
+		String result = bank.getName();
+		result = result + "\n" + acctNumber;
+		result += "\n" + balance;
+		result += "\n" + interestRate;
+		return result;
 	}
 
 }

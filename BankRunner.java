@@ -1,17 +1,12 @@
 public class BankRunner {
 
 	public static void main(String[] args) {
-		BankAccount ba = new BankAccount(0.03, "password");
-		System.out.println(ba.getBalance("password"));
-		System.out.println(ba.getBalance("Password"));
-		ba.deposit(100);
-		System.out.println(ba.getBalance("password"));
-		ba.deposit(-500);
-		System.out.println(ba.getBalance("password"));
-		ba.withdraw(20, "password");
-		System.out.println(ba.getBalance("password"));
-		System.out.println(ba.accrueInterest(2));
-
+		Bank chaseBank = new Bank("Chase Bank", 10000000, 0.025);
+		int savings = chaseBank.createAccount("werdp@ss");
+		double bal = chaseBank.deposit(savings, 12.00, "werdp@ss");
+		System.out.println(bal);
+		System.out.println(chaseBank.acctInfo(savings, "werdp@ss"));
+		System.out.println(chaseBank.acctInfo(savings, "werdp@s"));
 	}
 
 }
