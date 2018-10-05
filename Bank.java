@@ -43,9 +43,11 @@ public class Bank {
 		BankAccount ba = accounts.get(num);
 		return ba.getBalance(pass);
 	}
-	public String getName(){
+
+	public String getName() {
 		return name;
 	}
+
 	public String acctInfo(int num, String pass){
 		BankAccount ba = accounts.get(num);
 		if (ba.checkPassword(pass)){
