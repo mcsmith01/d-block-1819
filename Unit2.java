@@ -1,7 +1,8 @@
 public class Unit2 {
 
 	public static void main(String[] args) {
-		strings();
+		// strings();
+		wolfpack();
 		// fundamentals();
 	}
 
@@ -11,7 +12,22 @@ public class Unit2 {
 		double z = (double) x / y * y;
 		System.out.println(z);
 	}
+	public static void wolfpack(){
+		String mclaughinmyrarri = "It's a great day to do stats; we need more people in stats! stats is fantastic";
+		// mclaughinmyrarri = "zzzzzzzzzzzzzzzzzzzzzzzzzz";
+		String zinteger = "zzzzzz";
+		int z = -(zinteger.length());
+		do {
+			z = mclaughinmyrarri.indexOf(zinteger, z + zinteger.length());
+			System.out.println(z);
+		} while (z > -1);
+		String andSwitch = mclaughinmyrarri.substring(23, 28); // 28-23=5 QEDont@me
+		System.out.println(andSwitch);
+		System.out.println("abc".compareTo("cde"));
+// lorenzo's code
 
+
+	}
 	public static void strings() {
 		String s = "Hello";
 		String t = "World";
