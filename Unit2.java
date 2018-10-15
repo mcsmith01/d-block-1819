@@ -59,7 +59,7 @@ public static void ifStatements() {
 				System.out.println(random2 + " " + random1);
 			}
 		}
-		String strang = "I am strang";
+		String strang = "I am strange";
 		String strong = "I am not Marcus";
 		if (strang.equals(strong)) {
  			System.out.println("True");
