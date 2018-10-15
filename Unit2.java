@@ -2,8 +2,9 @@ public class Unit2 {
 
 	public static void main(String[] args) {
 		// strings();
-		wolfpack();
+		// wolfpack();
 		// fundamentals();
+		ifStatements();
 	}
 
 	public static void fundamentals() {
@@ -24,10 +25,54 @@ public class Unit2 {
 		String andSwitch = mclaughinmyrarri.substring(23, 28); // 28-23=5 QEDont@me
 		System.out.println(andSwitch);
 		System.out.println("abc".compareTo("cde"));
-// lorenzo's code
+// lorenzo's trash code
+}
 
+public static void ifStatements() {
+	int random1 = (int) (Math.random() * 10);
+	int random2 = (int) (Math.random() * 10);
+	int random3 = (int) (Math.random() * 10);
+	random1 = 4;
+	random2 = 4;
+	random3 = 5;
 
+	if (random1 <= random2 && random1 <= random3) {
+		System.out.print(random1 + " ");
+		if (random2 < random3) {
+			System.out.println(random2 + " " + random3);
+		} else {
+			System.out.println(random3 + " " + random2);
+		}
 	}
+	else if (random2 <= random1 && random2 <= random3) {
+		System.out.print(random2 + " ");
+		if (random1 < random3) {
+			System.out.println(random1 + " " + random3);
+		} else {
+				System.out.println(random3 + " " + random1);
+			}
+		} else {
+			System.out.print(random3 + " ");
+			if (random1 < random2) {
+				System.out.println(random1 + " " + random2);
+			} else {
+				System.out.println(random2 + " " + random1);
+			}
+		}
+		String strang = "I am strang";
+		String strong = "I am not Marcus";
+		if (strang.equals(strong)) {
+ 			System.out.println("True");
+		}
+		if (strang.compareTo(strong) < 0) {
+			System.out.println("strang comes first");
+		} else {
+			System.out.println("strong comes first");
+		}
+	}
+
+
+
 	public static void strings() {
 		String s = "Hello";
 		String t = "World";
