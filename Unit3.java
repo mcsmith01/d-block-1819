@@ -24,18 +24,8 @@ public class Unit3 {
   }
   public static void devIsSmall(int num1){ for (int i = 0; i <= num1; i++){ System.out.println(i);} }
 
-  public static void devIsSwole(int evens){
-    for (int i = 0; i <= evens; i++){
-      if (i % 2 == 0){
-        System.out.print(i+" ");
-      }
-    }
-    System.out.println();
-    for (int i = 0; i <= evens; i+=2){
-      System.out.print(i + " ");
-    }
-  }
-  
+  public static void devIsSwole(int evens){ for (int i = 0; i <= evens; i++){ if (i % 2 == 0){ System.out.print(i+" "); } } System.out.println(); for (int i = 0; i <= evens; i+=2){ System.out.print(i + " "); } }
+
 
   public static void timesDevProvesHesGreat(String allTheTime) {
     int end = allTheTime.length();
