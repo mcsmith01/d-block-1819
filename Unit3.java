@@ -3,7 +3,10 @@ public class Unit3 {
   public static void main(String[] args) {
     // int x = gcd (100, 856);
     // System.out.println(x);
-    factors (100);
+    //factors (100);
+    //fib(30);
+    int x = fibNum(60);
+    System.out.println(x);
     // devIsSmall(22); devIsSwole(22);
     // int x = sumOfMinutesChenzoIsLate(90);
     // System.out.println(x);
@@ -40,7 +43,28 @@ public class Unit3 {
     }
     return num1;
   }
-
+  public static void fib(int x){
+    int num1 = 1;
+    int num2 = 1;
+    System.out.println(num1);
+    System.out.println(num2);
+    for(int i = 2; i < x; i++){
+      int sum = num1 + num2;
+      num1 = num2;
+      num2 = sum;
+      System.out.println(sum);
+    }
+  }
+  public static int fibNum(int x){
+    int num1 = 1;
+    int num2 = 1;
+    while(num2 < x){
+      int sum = num1 + num2;
+      num1 = num2;
+      num2 = sum;
+    }
+    return num1;
+  }
   public static void factors(int num) {
     int divisor = 2;
     int exponent = 0;
