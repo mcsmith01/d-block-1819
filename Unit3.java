@@ -7,6 +7,7 @@ public class Unit3 {
     //fib(30);
     int x = fibNum(60);
     System.out.println(x);
+	nested();
     // devIsSmall(22); devIsSwole(22);
     // int x = sumOfMinutesChenzoIsLate(90);
     // System.out.println(x);
@@ -14,6 +15,15 @@ public class Unit3 {
     // int y = exponents(3, 5);
     // System.out.println(y);
   }
+
+	public static void nested() {
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 4; j++) {
+				System.out.println(i + j);
+			}
+		}
+	}
+
   public static int sumOfMinutesChenzoIsLate(int num) {
     int initialSum = 0;
     //int minutesLate = 1;
