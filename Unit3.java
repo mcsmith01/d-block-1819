@@ -5,14 +5,40 @@ public class Unit3 {
     // System.out.println(x);
     //factors (100);
     //fib(30);
-    int x = fibNum(60);
-    System.out.println(x);
+    // int x = fibNum(60);
+    // System.out.println(x);
     // devIsSmall(22); devIsSwole(22);
     // int x = sumOfMinutesChenzoIsLate(90);
     // System.out.println(x);
     // timesDevProvesHesGreat("everyday");
     // int y = exponents(3, 5);
     // System.out.println(y);
+    int[] r = randomNumbers(17);
+    printArray(r);
+    r = orderedNumbers(19);
+    printArray(r);
+    int[] dodo = {2, 3, 5, 7, 11, 13};
+    printArray(dodo);
+  }
+  public static int[] orderedNumbers(int i) {
+    int[] narr = new int[i];
+    for (int j = 0; j < i; j++) {
+      narr[j] = j + 1;
+    }
+    return narr;
+  }
+  public static void printArray(int[] ray) {
+    for (int i = 0; i < ray.length; i++) {
+      System.out.print(ray[i] + " ");
+    }
+    System.out.println();
+  }
+  public static int[] randomNumbers(int i) {
+    int[] arr = new int[i];
+    for (int j = 0; j < i; j++) {
+      arr[j] = (int)(Math.random() * 10) + 1;
+    }
+    return arr;
   }
   public static int sumOfMinutesChenzoIsLate(int num) {
     int initialSum = 0;
