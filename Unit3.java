@@ -5,24 +5,81 @@ public class Unit3 {
     // System.out.println(x);
     //factors (100);
     //fib(30);
-    int x = fibNum(60);
-    System.out.println(x);
-	nested();
+    // int x = fibNum(60);
+    // System.out.println(x);
     // devIsSmall(22); devIsSwole(22);
     // int x = sumOfMinutesChenzoIsLate(90);
     // System.out.println(x);
     // timesDevProvesHesGreat("everyday");
     // int y = exponents(3, 5);
     // System.out.println(y);
+    int[] r = randomNumbers(17);
+    printArray(r);
+    r = orderedNumbers(19);
+    printArray(r);
+    int[] dodo = {2, 3, 5, 7, -1, 13};
+    printArray(dodo);
+    String[] bigShaq = {"mans", "not", "hot"};
+    printArray(bigShaq);
+    switcheroo(bigShaq, 1, 2);
+    printArray(bigShaq);
+    System.out.println(quickMaths(dodo));
+    System.out.println(minArray(dodo));
   }
 
-	public static void nested() {
-		for (int i = 0; i < 4; i++) {
-			for (int j = i; j < 5; j++) {
-				System.out.println(i + j);
-			}
-		}
-	}
+  public static int[] orderedNumbers(int i) {
+    int[] narr = new int[i];
+    for (int j = 0; j < i; j++) {
+      narr[j] = j + 1;
+    }
+    return narr;
+  }
+
+  public static void printArray(int[] ray) {
+    for (int i = 0; i < ray.length; i++) {
+      System.out.print(ray[i] + " ");
+    }
+    System.out.println();
+  }
+
+  public static void printArray(String[] ray) {
+    for (String i : ray) {
+      System.out.print(i + " ");
+    }
+    System.out.println();
+  }
+
+  public static void switcheroo(String[] ray, int x, int y) {
+    String john = ray[x];
+    ray[x] = ray[y];
+    ray[y] = john;
+  }
+
+  public static int quickMaths(int[] ray) {
+    int sum = 0;
+    for (int i : ray) {
+      sum += i;
+    }
+    return sum;
+  }
+
+  public static int minArray(int[] ray) {
+    int min = ray[0];
+    for (int i : ray) {
+      if (i < min) {
+        min = i;
+      }
+    }
+    return min;
+  }
+
+  public static int[] randomNumbers(int i) {
+    int[] arr = new int[i];
+    for (int j = 0; j < i; j++) {
+      arr[j] = (int)(Math.random() * 10) + 1;
+    }
+    return arr;
+  }
 
   public static int sumOfMinutesChenzoIsLate(int num) {
     int initialSum = 0;
@@ -53,6 +110,7 @@ public class Unit3 {
     }
     return num1;
   }
+
   public static void fib(int x){
     int num1 = 1;
     int num2 = 1;
@@ -65,6 +123,7 @@ public class Unit3 {
       System.out.println(sum);
     }
   }
+
   public static int fibNum(int x){
     int num1 = 1;
     int num2 = 1;
@@ -75,6 +134,7 @@ public class Unit3 {
     }
     return num1;
   }
+
   public static void factors(int num) {
     int divisor = 2;
     int exponent = 0;
@@ -103,6 +163,7 @@ public class Unit3 {
       end--;
     }
   }
+
   public static int exponents(int base, int pow) {
     int currentResult = 1;
     int iteration = 0;
