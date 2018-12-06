@@ -25,6 +25,10 @@ public class Unit3 {
     printArray(bigShaq);
     System.out.println(quickMaths(dodo));
     System.out.println(minArray(dodo));
+    removeAt(2, dodo);
+    printArray(dodo);
+    insertAt(3, dodo, 8);
+    printArray(dodo);
   }
 
   public static int[] orderedNumbers(int i) {
@@ -79,6 +83,20 @@ public class Unit3 {
       arr[j] = (int)(Math.random() * 10) + 1;
     }
     return arr;
+  }
+
+  public static void removeAt(int index, int[] argh) {
+      for (int i = index; i < argh.length - 1; i++) {
+          argh[i] = argh[i + 1];
+      }
+      argh[argh.length - 1] = -1;
+  }
+
+  public static void insertAt(int index, int[] argh, int x) {
+      for (int i = argh.length - 1; i > index; i--) {
+          argh[i] = argh[i - 1];
+      }
+      argh[index] = x;
   }
 
   public static int sumOfMinutesChenzoIsLate(int num) {
