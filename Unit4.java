@@ -1,7 +1,9 @@
 public class Unit4 {
 
   public static void main(String[] args){
-    int[][] board = generate (10, 10);
+    // int[][] board = generate (10, 10);
+    // printBoard(board);
+    double[][] board = randomBoard(10, 10, 20);
     printBoard(board);
   }
 
@@ -58,4 +60,59 @@ public class Unit4 {
       System.out.println();
     }
   }
+
+  public static String[][] checkerBoard(int rows, int cols) {
+    String[][] checkers = new String[rows][cols];
+    for (int r = 0; r < checkers.length; r++) {
+      for (int c = 0; c < checkers[0].length; c++) {
+        if ((r + c) % 2 == 0) {
+          checkers[r][c] = "X";
+        } else {
+          checkers[r][c] = "O";
+        }
+
+      }
+    }
+    return checkers;
+  }
+
+  public static void printBoard(String[][] board){
+    for (String[] row : board){
+      for (String spot : row){
+        System.out.print(spot + " ");
+      }
+      System.out.println();
+    }
+  }
+
+  public static double[][] randomBoard(int rows, int cols, double limit) {
+    double[][] board = new double[rows][cols];
+    for (int r = 0; r < board.length; r++) {
+      for (int c = 0; c < board[0].length; c++) {
+        board[r][c] = Math.random() * limit;
+      }
+    }
+    return board;
+  }
+
+  public static void printBoard(double[][] board){
+    for (double[] row : board){
+      for (double spot : row) {
+        spot = (int)(spot * 100)/100.0;
+        System.out.print(spot + " ");
+      }
+      System.out.println();
+    }
+  }
+
+  public static double sumOfOneOfTheRows(double[] row) {
+    double sum = 0;
+    for (int i = 0; i < row.length; i++) {
+      sum += row[i];
+    }
+    return sum;
+  }
+
+
+
 }
