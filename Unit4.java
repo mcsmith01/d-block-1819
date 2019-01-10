@@ -113,6 +113,18 @@ public class Unit4 {
     return sum;
   }
 
+  public static int maxSum(double[][] board) {
+    int maxRow = 0;
+    double maxValue = 0;
+    for (int r = 0; r < board.length; r++) {
+      double currentValue = sumOfOneOfTheRows(board[r]);
+      if (currentValue > maxValue) {
+        maxValue = currentValue;
+        maxRow = r;
+      }
+    }
+    return maxRow;
+  }
 
 
 }
