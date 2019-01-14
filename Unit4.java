@@ -1,10 +1,14 @@
+import java.util.ArrayList;
+
 public class Unit4 {
 
   public static void main(String[] args){
     // int[][] board = generate (10, 10);
     // printBoard(board);
-    double[][] board = randomBoard(10, 10, 20);
-    printBoard(board);
+    // double[][] board = randomBoard(10, 10, 20);
+    // printBoard(board);
+    ArrayList<Integer> list = primeList(10);
+    System.out.println(list);
   }
 
   public static int[][] generate(int r, int c){
@@ -124,6 +128,39 @@ public class Unit4 {
       }
     }
     return maxRow;
+  }
+
+  public static ArrayList<Integer> makeList(int num, int maxVal){
+    ArrayList<Integer> list = new ArrayList<Integer>();
+    for(int i = 0; i < num; i++){
+      int x = (int)((Math.random()) * (maxVal+1));
+      list.add(x);
+    }
+    return list;
+  }
+
+  public static void printList(ArrayList<Integer> list){
+    for(int num: list){
+      System.out.print(num + ", ");
+    }
+  }
+
+  public static ArrayList<Integer> primeList(int n){
+    ArrayList<Integer> prime = new ArrayList<Integer>();
+    int checc = 2;
+    while(prime.size() < n){
+      boolean sign = true;
+      for (int j = 0; j < prime.size(); j++){
+        if(checc % prime.get(j) == 0){
+          sign = false;
+        }
+      }
+      if(sign){
+        prime.add(checc);
+      }
+      checc++;
+    }
+    return prime;
   }
 
 
