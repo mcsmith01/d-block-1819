@@ -9,6 +9,7 @@ public class Unit4 {
     // printBoard(board);
     ArrayList<Integer> list = primeList(10);
     System.out.println(list);
+    // System.out.println(fibLessThan(9999999));
   }
 
   public static int[][] generate(int r, int c){
@@ -147,21 +148,41 @@ public class Unit4 {
 
   public static ArrayList<Integer> primeList(int n){
     ArrayList<Integer> prime = new ArrayList<Integer>();
-    int checc = 2;
-    while(prime.size() < n){
-      boolean sign = true;
-      for (int j = 0; j < prime.size(); j++){
-        if(checc % prime.get(j) == 0){
-          sign = false;
-        }
-      }
-      if(sign){
-        prime.add(checc);
-      }
-      checc++;
+    prime.add(2);
+    for (int i = 0; i < n - 1; i++) {
+      nextPrime(prime);
     }
     return prime;
   }
 
+  public static void nextPrime(ArrayList<Integer> aList) {
+    int check = aList.get(aList.size() - 1) + 1;
+    while (!isPrime(aList, check)) {
+      check++;
+    }
+    aList.add(check);
+  }
+
+  public static boolean isPrime(ArrayList<Integer> bList, int checky) {
+    for (int i : bList) {
+      if (checky % i == 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  public static ArrayList<Integer> fibLessThan(int zint) {
+    ArrayList<Integer> fibbyFib = new ArrayList<Integer>();
+    fibbyFib.add(0);
+    fibbyFib.add(1);
+    while (fibbyFib.get(fibbyFib.size() - 1) < zint) {
+      int x = fibbyFib.get(fibbyFib.size() - 1);
+      int y = fibbyFib.get(fibbyFib.size() - 2);
+      fibbyFib.add(x + y);
+    }
+    fibbyFib.remove(fibbyFib.size() - 1);
+    return fibbyFib;
+  }
 
 }
