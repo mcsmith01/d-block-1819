@@ -14,9 +14,9 @@ public class Bank {
 		accounts = new ArrayList<BankAccount>();
 	}
 
-	public int createAccount(String pass) {
+	public int createSavingsAccount(String pass) {
 		int num = accounts.size();
-		BankAccount account = new BankAccount(num, loanRate - 0.02, pass, this);
+		BankAccount account = new SavingsAccount(num, pass, this, loanRate - 0.02);
 		accounts.add(account);
 		return num;
 	}

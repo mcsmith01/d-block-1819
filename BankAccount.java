@@ -2,14 +2,12 @@ public class BankAccount {
 
 	private int acctNumber;
 	private double balance;
-	private double interestRate;
 	private String password;
 	private Bank bank;
 
-	public BankAccount(int n, double rate, String pass, Bank b) {
+	public BankAccount(int n, String pass, Bank b) {
 		acctNumber = n;
 		balance = 0;
-		interestRate = rate;
 		password = pass;
 		bank = b;
 	}
@@ -39,13 +37,6 @@ public class BankAccount {
 		}
 	}
 
-	public double accrueInterest(int month) {
-		double monthRate = interestRate/12 * month; /*interest*/
-		double interest = balance * monthRate; /*balance with interest*/
-		balance = balance + interest; /*balance plus interest made*/
-		return balance;
-	}
-
 	public boolean checkPassword(String guess) {
 		return guess.equals(password);
 	}
@@ -54,7 +45,7 @@ public class BankAccount {
 		String result = bank.getName();
 		result = result + "\n" + acctNumber;
 		result += "\n" + balance;
-		result += "\n" + interestRate;
+		//result += "\n" + interestRate;
 		return result;
 	}
 
