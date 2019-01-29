@@ -9,7 +9,7 @@ public class SavingsAccount extends BankAccount{
     word = pass;
   }
 
-  public double acrooInterest(int months){
+  public double accrueInterest(int months){
     double rate = interestRate/12;
     rate *= months * getBalance(word);
     deposit(rate);
@@ -20,7 +20,7 @@ public class SavingsAccount extends BankAccount{
   public String toString(){
     String result = "SavingsAccount \n";
     result += super.toString();
-    result += interestRate;
+    result += "\n" + interestRate;
     return result;
   }
 }

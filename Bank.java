@@ -21,6 +21,14 @@ public class Bank {
 		return num;
 	}
 
+	public int createCheckingAccount(String pass, int runoff, String runoffPassword) {
+		int num = accounts.size();
+		BankAccount ba = accounts.get(runoff);
+		BankAccount account = new CheckingAccount(num, pass, this, ba, runoffPassword);
+		accounts.add(account);
+		return num;
+	}
+
 	public double deposit(int num, double amount, String pass) {
 		BankAccount ba = accounts.get(num);
 		if (ba.deposit(amount) >= 0) {
