@@ -41,6 +41,7 @@ public class BankAccount {
 		return guess.equals(password);
 	}
 
+	@Override
 	public String toString() {
 		String result = bank.getName();
 		result = result + "\n" + acctNumber;

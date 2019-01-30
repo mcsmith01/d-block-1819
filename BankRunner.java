@@ -10,7 +10,7 @@ public class BankRunner {
 		System.out.println("Communism was never put in practice correctly");
 		System.out.println(chaseBank.acctInfo(checking, "012345"));
 		System.out.println(chaseBank.acctInfo(savings, "werdp@ss"));
-
+		chaseBank.runInterest(2);
 	}
 
 }
