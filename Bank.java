@@ -5,13 +5,13 @@ public class Bank {
 	private double vault;
 	private double loanRate;
 	private String name;
-	private ArrayList<Object> accounts;
+	private ArrayList<BankAccount> accounts;
 
 	public Bank(String n, double v, double lr) {
 		name = n;
 		vault = v;
 		loanRate = lr;
-		accounts = new ArrayList<Object>();
+		accounts = new ArrayList<BankAccount>();
 	}
 
 	public int createSavingsAccount(String pass) {
@@ -68,9 +68,9 @@ public class Bank {
 
 	public void runInterest(int months) {
 		for (BankAccount b : accounts) {
-			// if (b instanceof SavingsAccount) {
-				((SavingsAccount) b).accrueInterest(months);
-			// }
+			if (b instanceof InterestBearing) {
+				((InterestBearing) b).accrueInterest(months);
+			}
 		}
 	}
 }
