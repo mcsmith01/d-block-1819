@@ -1,21 +1,31 @@
+import java.util.ArrayList;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class Sorting {
 
 	public static void main(String[] args) {
+		ArrayList<String> ignore = new ArrayList<String>();
 		String[] algorithms = {"bubble", "selection"};
 		System.out.print("Size      ");
 		for (String a : algorithms) {
 			System.out.printf("%15s", a);
 		}
 		System.out.println();
-		for(int num = 100; num < 250000; num = num * 2){
+		for(int num = 100; num < 1000000; num = num * 2){
 			System.out.printf("%-10d", num);
 			int[] randomArray = randomArr(num);
 			for(String a : algorithms){
-				double time = testSort(a,randomArray) / 1000000.0;
+				double time;
+				if (!ignore.contains(a)) {
+					time = testSort(a,randomArray) / 1000000.0;
+				} else {
+					time = -1;
+				}
 				System.out.printf("%,15.3f", time);
+				if (time > 15000) {
+					ignore.add(a);
+				}
 			}
 			System.out.println();
 		}
