@@ -5,14 +5,19 @@ public class Sorting {
 
 	public static void main(String[] args) {
 		String[] algorithms = {"bubble", "selection"};
-		for(int num = 1000; num < 1000000; num = num * 2){
-			System.out.println(num);
+		System.out.print("Size      ");
+		for (String a : algorithms) {
+			System.out.printf("%15s", a);
+		}
+		System.out.println();
+		for(int num = 100; num < 250000; num = num * 2){
+			System.out.printf("%-10d", num);
 			int[] randomArray = randomArr(num);
 			for(String a : algorithms){
-				System.out.print(a + ": ");
 				double time = testSort(a,randomArray) / 1000000.0;
-				System.out.println(time);
+				System.out.printf("%,15.3f", time);
 			}
+			System.out.println();
 		}
 		// selection(randomArray);
 		// printArr(randomArray);
