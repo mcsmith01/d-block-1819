@@ -10,8 +10,8 @@ public class Hanoi {
     one = new ArrayList<Integer>();
     two = new ArrayList<Integer>();
     three = new ArrayList<Integer>();
-    for (int i = 0; i < 3; i++){
-      one.add(i);
+    for (int i = 0; i < 5; i++){
+      one.add(i + 1);
     }
     int count = moveTower(one.size(), two, one, three);
     System.out.println(count);

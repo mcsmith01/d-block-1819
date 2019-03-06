@@ -16,15 +16,14 @@ public class Sorting {
 			System.out.printf("%-10d", num);
 			int[] randomArray = randomArr(num);
 			for(String a : algorithms){
-				double time;
 				if (!ignore.contains(a)) {
-					time = testSort(a,randomArray) / 1000000.0;
+					double time = testSort(a,randomArray) / 1000000.0;
+					System.out.printf("%,15.3f", time);
+					if (time > 15000) {
+						ignore.add(a);
+					}
 				} else {
-					time = -1;
-				}
-				System.out.printf("%,15.3f", time);
-				if (time > 15000) {
-					ignore.add(a);
+					System.out.printf("%15s", "---");
 				}
 			}
 			System.out.println();
