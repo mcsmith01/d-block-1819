@@ -6,15 +6,18 @@ public class Sorting {
 
 	public static void main(String[] args) {
 		ArrayList<String> ignore = new ArrayList<String>();
-		String[] algorithms = {"bubble", "selection"};
+		String[] algorithms = {"bubble", "selection", "insertion"};
 		System.out.print("Size      ");
 		for (String a : algorithms) {
 			System.out.printf("%15s", a);
 		}
 		System.out.println();
+		printArr(reverseArr(20));
 		for(int num = 100; num < 1000000; num = num * 2){
 			System.out.printf("%-10d", num);
-			int[] randomArray = randomArr(num);
+			// int[] randomArray = randomArr(num);
+			int[] randomArray = reverseArr(num);
+			// int[] randomArray = new int[num];
 			for(String a : algorithms){
 				if (!ignore.contains(a)) {
 					double time = testSort(a,randomArray) / 1000000.0;
@@ -28,9 +31,6 @@ public class Sorting {
 			}
 			System.out.println();
 		}
-		// selection(randomArray);
-		// printArr(randomArray);
-
 	}
 
 	// Bubble Sort
@@ -65,6 +65,19 @@ public class Sorting {
 	}
 
 	// Insertion Sort
+	public static void insertion(int[] arr) {
+		for (int i = 1; i < arr.length; i++) {
+			int temp = arr[i];
+			for (int j = i - 1; j >= 0 && arr[j] > temp; j--) {
+				arr[j + 1] = arr[j];
+				arr[j] = temp;
+			}
+
+		}
+
+
+
+	}
 
 	// Merge Sort
 
@@ -132,6 +145,14 @@ public class Sorting {
 		int[] arr = new int[num];
 		for(int i = 0; i < num;i++){
 			arr[i] = (int)(num * Math.random());
+		}
+		return arr;
+	}
+
+	public static int[] reverseArr(int num) {
+		int[] arr = new int[num];
+		for(int i = 0; i < num; i++) {
+			arr[i] = num - i;
 		}
 		return arr;
 	}
