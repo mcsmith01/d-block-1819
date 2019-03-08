@@ -6,17 +6,17 @@ public class Sorting {
 
 	public static void main(String[] args) {
 		ArrayList<String> ignore = new ArrayList<String>();
-		String[] algorithms = {"bubble", "selection", "insertion"};
+		String[] algorithms = {"bubble", "selection", "insertion", "merge"};
 		System.out.print("Size      ");
 		for (String a : algorithms) {
 			System.out.printf("%15s", a);
 		}
 		System.out.println();
 		printArr(reverseArr(20));
-		for(int num = 100; num < 1000000; num = num * 2){
+		for(int num = 100; num < 10000000; num = num * 2){
 			System.out.printf("%-10d", num);
-			// int[] randomArray = randomArr(num);
-			int[] randomArray = reverseArr(num);
+			int[] randomArray = randomArr(num);
+			// int[] randomArray = reverseArr(num);
 			// int[] randomArray = new int[num];
 			for(String a : algorithms){
 				if (!ignore.contains(a)) {
@@ -80,6 +80,46 @@ public class Sorting {
 	}
 
 	// Merge Sort
+
+	public static void merge(int[] arr) {
+		merge(arr, 0, arr.length);
+	}
+
+	public static void merge(int[] arr, int start, int end) {
+		if (end - start <= 1) {
+			return;
+		}
+		int mid = start + (end - start) / 2;
+		merge(arr, start, mid);
+		merge(arr, mid, end);
+		int[] half = new int[end - start];
+		int left = start;
+		int right = mid;
+		int index = 0;
+		while (left != mid && right != end) {
+			if (arr[left] <= arr [right]) {
+				half[index] = arr[left];
+				left++;
+			} else {
+				half[index] = arr[right];
+				right++;
+			}
+			index++;
+		}
+		while (right != end) {
+			half[index] = arr[right];
+			right++;
+			index++;
+		}
+		while (left != mid) {
+			half[index] = arr[left];
+			left++;
+			index++;
+		}
+		for (int i = start; i < end; i++) {
+			arr[i] = half[i - start];
+		}
+	}
 
 	/* Runs the indicated sorting algorithm on a
 	 * copy of the provided array. Returns the
